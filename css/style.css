@@ -72,3 +72,29 @@ footer {
     text-align: center;
     padding: 1rem;
 }
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .mission {
+        padding: 2rem 1rem;
+    }
+
+}
