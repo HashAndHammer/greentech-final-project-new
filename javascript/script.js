@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    console.log("JS ACTIVE");
+
+    // =========================
+    // PRODUCT SEARCH
+    // =========================
     const searchBar = document.getElementById("searchBar");
     const products = document.querySelectorAll(".product-card");
 
@@ -21,28 +26,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-const cards = document.querySelectorAll(".product-card");
+    // =========================
+    // PRODUCT ANIMATION
+    // =========================
+    const cards = document.querySelectorAll(".product-card");
 
-window.addEventListener("load", () => {
+    if (cards.length > 0) {
 
-    cards.forEach((card, index) => {
+        cards.forEach((card, index) => {
 
-        card.style.opacity = "0";
-        card.style.transform = "translateY(20px)";
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
 
-        setTimeout(() => {
+            setTimeout(() => {
 
-            card.style.transition = "0.5s ease";
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
+                card.style.transition = "0.5s ease";
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0)";
 
-        }, index * 150);
+            }, index * 150);
 
-    });
+        });
 
-});
+    }
 
-const contactForm = document.getElementById("contactForm");
+    // =========================
+    // CONTACT FORM
+    // =========================
+    const contactForm = document.getElementById("contactForm");
 
     if (contactForm) {
 
@@ -54,6 +65,12 @@ const contactForm = document.getElementById("contactForm");
             const email = document.getElementById("email");
             const message = document.getElementById("message");
             const formMessage = document.getElementById("formMessage");
+
+            // safety check (IMPORTANT)
+            if (!name || !email || !message || !formMessage) {
+                console.log("Missing form elements");
+                return;
+            }
 
             if (!name.value || !email.value || !message.value) {
 
