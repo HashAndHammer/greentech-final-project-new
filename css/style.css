@@ -279,3 +279,10 @@ button:hover {
 .button:hover {
     opacity: 0.9;
 }
+
+#formMessage {
+    margin-top: 1rem;
+    font-weight: bold;
+    padding: 0.75rem;
+    border-radius: 5px;
+}

@@ -1,7 +1,7 @@
 const searchBar = document.getElementById("searchBar");
 const products = document.querySelectorAll(".product-card");
 
-if (searchBar) {
+if (searchBar && products.length > 0) {
 
     searchBar.addEventListener("input", function () {
 
@@ -11,11 +11,7 @@ if (searchBar) {
 
             const text = product.textContent.toLowerCase();
 
-            if (text.includes(value)) {
-                product.style.display = "block";
-            } else {
-                product.style.display = "none";
-            }
+            product.style.display = text.includes(value) ? "block" : "none";
 
         });
 
@@ -55,21 +51,21 @@ if (contactForm) {
         const name = document.getElementById("name").value.trim();
         const email = document.getElementById("email").value.trim();
         const message = document.getElementById("message").value.trim();
-
         const formMessage = document.getElementById("formMessage");
 
-        if (name === "" || email === "" || message === "") {
+        if (!name || !email || !message) {
 
             formMessage.textContent = "Please complete all fields.";
-            formMessage.style.color = "red";
+            formMessage.style.color = "white";
+            formMessage.style.backgroundColor = "red";
 
         } else {
 
             formMessage.textContent = "Message sent successfully!";
-            formMessage.style.color = "green";
+            formMessage.style.color = "white";
+            formMessage.style.backgroundColor = "green";
 
             contactForm.reset();
-
         }
 
     });
