@@ -1,23 +1,25 @@
-const searchBar = document.getElementById("searchBar");
-const products = document.querySelectorAll(".product-card");
+document.addEventListener("DOMContentLoaded", () => {
 
-if (searchBar && products.length > 0) {
+    const searchBar = document.getElementById("searchBar");
+    const products = document.querySelectorAll(".product-card");
 
-    searchBar.addEventListener("input", function () {
+    if (searchBar && products.length > 0) {
 
-        const value = searchBar.value.toLowerCase().trim();
+        searchBar.addEventListener("input", () => {
 
-        products.forEach(product => {
+            const value = searchBar.value.toLowerCase().trim();
 
-            const text = product.textContent.toLowerCase();
+            products.forEach(product => {
 
-            product.style.display = text.includes(value) ? "block" : "none";
+                const text = product.textContent.toLowerCase();
+
+                product.style.display = text.includes(value) ? "block" : "none";
+
+            });
 
         });
 
-    });
-
-}
+    }
 
 const cards = document.querySelectorAll(".product-card");
 
@@ -42,32 +44,34 @@ window.addEventListener("load", () => {
 
 const contactForm = document.getElementById("contactForm");
 
-if (contactForm) {
+    if (contactForm) {
 
-    contactForm.addEventListener("submit", function (event) {
+        contactForm.addEventListener("submit", (event) => {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
-        const formMessage = document.getElementById("formMessage");
+            const name = document.getElementById("name");
+            const email = document.getElementById("email");
+            const message = document.getElementById("message");
+            const formMessage = document.getElementById("formMessage");
 
-        if (!name || !email || !message) {
+            if (!name.value || !email.value || !message.value) {
 
-            formMessage.textContent = "Please complete all fields.";
-            formMessage.style.color = "white";
-            formMessage.style.backgroundColor = "red";
+                formMessage.textContent = "Please complete all fields.";
+                formMessage.style.backgroundColor = "red";
+                formMessage.style.color = "white";
 
-        } else {
+            } else {
 
-            formMessage.textContent = "Message sent successfully!";
-            formMessage.style.color = "white";
-            formMessage.style.backgroundColor = "green";
+                formMessage.textContent = "Message sent successfully!";
+                formMessage.style.backgroundColor = "green";
+                formMessage.style.color = "white";
 
-            contactForm.reset();
-        }
+                contactForm.reset();
+            }
 
-    });
+        });
 
-}
+    }
+
+});
