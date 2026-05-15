@@ -244,3 +244,24 @@ button:hover {
     margin-bottom: 1rem;
 
 }
+
+.final-section {
+
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+
+}
+
+.final-section ul {
+
+    margin-top: 1rem;
+    padding-left: 2rem;
+
+}
+
+.final-section li {
+
+    margin-bottom: 0.5rem;
+
+}
